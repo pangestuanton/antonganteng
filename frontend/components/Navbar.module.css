@@ -1,0 +1,240 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.logoIcon {
+  color: var(--accent);
+  font-size: 1.2rem;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, #0080ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  transition: color var(--transition), background var(--transition);
+}
+
+.iconBtn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.navLink {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.navLink.active {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.userMenu {
+  position: relative;
+}
+
+.avatarBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 5px 12px 5px 5px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all var(--transition);
+}
+
+.avatarBtn:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-hover);
+}
+
+.avatarImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarInitial {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #0080ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-inverse);
+}
+
+.userName {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  min-width: 200px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.15s ease;
+  z-index: 200;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownHeader {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dropdownName {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dropdownEmail {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  transition: all var(--transition);
+}
+
+.dropdownItem:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.dropdownDanger {
+  color: var(--error);
+}
+
+.dropdownDanger:hover {
+  background: rgba(255, 82, 82, 0.08);
+  color: var(--error);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+}
+
+@media (max-width: 768px) {
+  .logoText {
+    font-size: 0.9rem;
+  }
+  .navLink {
+    display: none;
+  }
+  .userName {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "antoniqueee-ai-frontend",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@antoniqueee_api_url",
+    "NEXT_PUBLIC_SOCKET_URL": "@antoniqueee_socket_url"
+  }
+}

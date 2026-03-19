@@ -1,0 +1,24 @@
+# node modules
+**/node_modules/
+
+# env files di semua folder
+**/.env
+**/.env.local
+**/.env.*.local
+
+# build / next.js
+**/.next/
+**/out/
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system files
+.DS_Store
+Thumbs.db
+
+# database / seed (kalau sensitif)
+**/database/seed.js
